@@ -1,2 +1,4 @@
 # barebones
-Basic starting point for projects [barebones.io](http://barebones.io)
+> A lightweight starting point for web projects
+
+[barebones.io](http://barebones.io)
