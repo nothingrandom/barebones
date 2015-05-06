@@ -1,0 +1,12 @@
+// Imports
+@import "reset", "utilities", "fonts", "variables";
+
+// Grid
+@import "grid/";
+
+// YOUR STYLES HERE //
+html {
+	@include font-smoothing;
+}
+
+@import "mobile";
