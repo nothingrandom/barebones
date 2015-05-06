@@ -1,0 +1,24 @@
+// Large desktop
+@include screen-min($screen-xl) {
+
+}
+
+// Tablets
+@include screen-range($screen-md + 1, $screen-lg) {
+
+}
+
+// Large phone
+@include screen-range($screen-sm +1, $screen-md) {
+
+}
+
+// Small phones
+@include screen-range($screen-mu + 1, $screen-sm) {
+
+}
+
+// Smart watches
+@include screen-max($screen-mu) {
+
+}
