@@ -1,5 +1,9 @@
 // https://github.com/nothingrandom/reset.css
 
+// based off of
+// @see normalize: http://necolas.github.io/normalize.css/
+// @see Reset CSS: http://meyerweb.com/eric/tools/css/reset/
+
 html {
 	overflow-y: scroll;
 	// Prevent text resize after orientation change on iOS
@@ -28,7 +32,7 @@ body {
 }
 
 // HTML 5 Display definitions
-// ======================================================
+// ==============================
 
 // HTML5 block elements not defined correctly in IE 8-11 and Firefox.
 article,
@@ -72,7 +76,7 @@ template {
 }
 
 // Links
-// ======================================================
+// ==============================
 
 // Remove that gray background color from links in IE 10
 a {
@@ -80,7 +84,7 @@ a {
 }
 
 // Text
-// ======================================================
+// ==============================
 
 // Styling not present in IE 8-11, Safari, and Chrome
 abbr[title] {
@@ -127,7 +131,7 @@ sub {
 }
 
 // Embedded content
-// ======================================================
+// ==============================
 
 // Remove border when inside link in IE 8-10
 // Set as a block for styling
@@ -156,7 +160,7 @@ iframe {
 }
 
 // Grouping content
-// ======================================================
+// ==============================
 
 // Margin not present in IE 8-9 and Safari
 figure {
@@ -186,13 +190,12 @@ samp {
 }
 
 // Forms
-// ======================================================
+// ==============================
 
 // Limitation: By default, Chrome and Safari on OS X allow limited styling of "select", unless a border is set
 // Fixes variations of margins in Firefox, Safari, and Chrome
 // Correct color not being inherited
 // Correct font properties not being inherited
-
 button,
 input,
 optgroup,
@@ -247,7 +250,6 @@ input {
 
 // Fix "box-sizing" set to "content-box" in IE 8-10
 // Remove excess padding in IE 8-10
-
 input[type="checkbox"],
 input[type="radio"] {
 	box-sizing: border-box;
@@ -301,7 +303,7 @@ optgroup {
 }
 
 // Tables
-// ======================================================
+// ==============================
 
 // Remove spacing between table cells
 table {
@@ -315,7 +317,7 @@ th {
 }
 
 // Lists
-// ======================================================
+// ==============================
 
 ol,
 ul {
@@ -325,7 +327,7 @@ ul {
 }
 
 // Tab Index
-// ======================================================
+// ==============================
 
 // Prevent focus outline on links that cannot be accessed via keyboard
 [tabindex="-1"]:focus {
