@@ -16,6 +16,6 @@
 		<meta name="description" content="">
 
 		<link rel="icon" type="image/png" href="assets/images/"/>
-		<link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 	</head>
 	<body>
