@@ -142,6 +142,34 @@
 	}
 }
 
+// Screen sizes
+// ==============================
+@mixin screen-max($max-width) {
+	@media screen
+	and (max-width: $max-width)
+	and (max-device-width: $max-width) {
+  		@content;
+	}
+}
+
+@mixin screen-min($min-width) {
+	@media screen
+	and (min-width: $min-width)
+	and (min-device-width: $min-width) {
+  		@content;
+	}
+}
+
+@mixin screen-range($min-width, $max-width) {
+	@media screen
+	and (min-width: $min-width)
+	and (min-device-width: $min-width)
+	and (max-width: $max-width)
+	and (max-device-width: $min-width) {
+  		@content;
+	}
+}
+
 // Colors
 // ==============================
 
