@@ -9,3 +9,10 @@ $screen-md: em(768px);
 $screen-lg: em(1024px);
 $screen-sd: em(1280px);
 $screen-xl: em(1500px);
+
+// Grid settings
+// ==============================
+$row-width: em(1000px);
+$column-gutter: em(32px);
+$total-columns: 12;
+$mobile-total-columns: 4;
