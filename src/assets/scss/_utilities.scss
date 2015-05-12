@@ -181,7 +181,7 @@
 // rgba-convert
 // @param $hexcolor: Hex color you want to be converted to a rgba value
 // @param $opacity:	Value of alpha / opacity
-// @see https://twitter.com/westleyknight/status/595989268092301313
+// @see https://alwaystwisted.com/articles/2013-05-06-smarter-rgba-fallbacks-with-sass
 @function rgba-convert($hexcolor, $opacity) {
 	@return rgba($hexcolor, $opacity);
 }
