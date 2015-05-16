@@ -170,3 +170,13 @@ gulp.task('compress:js', function() {
 });
 
 
+// File size
+// ==============================
+var size = require('gulp-size');
+
+gulp.task('size', function() {
+	return gulp.src(config.path.doc + '**/*.*')
+	.pipe(size({
+		showFiles: true
+	}));
+})
