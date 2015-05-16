@@ -169,6 +169,38 @@ gulp.task('compress:js', function() {
 	.pipe(gulp.dest(config.path.build + 'js/'));
 });
 
+// Build
+// ==============================
+gulp.task('build:clean', function(cb) {
+	del([
+		'build/**/*'
+	], cb);
+})
+
+gulp.task('build:html', function() {
+	return gulp.src(config.path.doc + '**/*.{html,htm,php}')
+	.pipe(gulp.dest(config.path.build));
+})
+
+gulp.task('build:fonts', function() {
+	return gulp.src(config.path.fonts + '**/*.*')
+	.pipe(gulp.dest(config.path.build));
+})
+
+gulp.task('build:images', ['images'], function(done) {
+	return gulp.src(config.path.img)
+	.pipe(gulp.dest(config.path.build));
+})
+
+gulp.task('build', function(callback) {
+	runSequence('build:clean', 'compress', 'build:html', 'build:images', 'build:size')
+})
+
+gulp.task('build:size', function() {
+	return gulp.src(config.path.build + '**/*.*')
+	.pipe(size());
+})
+
 // Notifications
 // ==============================
 var notify = require('gulp-notify');
