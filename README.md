@@ -4,7 +4,7 @@
 
 [![Build status](https://travis-ci.org/nothingrandom/barebones.svg?branch=master)](https://travis-ci.org/nothingrandom/barebones)
 [![devDependency Status](https://david-dm.org/nothingrandom/barebones/dev-status.svg)](https://david-dm.org/nothingrandom/barebones#info=devDependencies)
-[![Built with gulp](https://lh6.googleusercontent.com/Il-d4FgnHvHW-lX0mQv6UktBt4i5l8fc7sjksCBTHiXyfVfZpR4k5sBZImBo2tfFLYEfdg=w1256-h558)](http://gulpjs.com/)
+[![Built with gulp](http://nothingrandom.com/images/built-gulp.png)](http://gulpjs.com/)
 
 ----------
 
