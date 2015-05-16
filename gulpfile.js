@@ -11,6 +11,8 @@ var del = require('del'),
 var plumber = require('gulp-plumber'),
 	sourcemaps = require('gulp-sourcemaps');
 
+var ftpconfig = require('./ftpconfig.json');
+
 // Task Aliases
 // ==============================
 gulp.task('default', ['sass', 'js', 'images']);
@@ -192,13 +194,47 @@ gulp.task('build:images', ['images'], function(done) {
 	.pipe(gulp.dest(config.path.build));
 })
 
-gulp.task('build', function(callback) {
-	runSequence('build:clean', 'compress', 'build:html', 'build:images', 'build:size')
+gulp.task('build', function(cb) {
+	runSequence('build:clean', 'compress', 'build:html', 'build:images', 'build:size', cb);
 })
 
 gulp.task('build:size', function() {
 	return gulp.src(config.path.build + '**/*.*')
 	.pipe(size());
+})
+
+// FTP
+// ==============================
+var ftp = require('vinyl-ftp');
+
+var conn = ftp.create({
+	host: ftpconfig.host,
+	user: ftpconfig.user,
+	pass: ftpconfig.pass,
+	port: ftpconfig.port,
+	parallel: 3,
+	log: gutil.log
+});
+
+gulp.task('deploy:fast', function(done) {
+	var globs = [
+		'build/**'
+	];
+
+	return gulp.src(globs, {
+		base: 'build',
+		buffer: false
+	})
+	.pipe(conn.newer(ftpconfig.path))
+	.pipe(conn.dest(ftpconfig.path));
+})
+
+gulp.task('deploy:clean', function(cb) {
+	conn.rmdir(ftpconfig.path, cb)
+})
+
+gulp.task('deploy', function() {
+	runSequence('build', 'deploy:fast');
 })
 
 // Notifications
