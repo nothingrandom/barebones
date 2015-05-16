@@ -70,3 +70,26 @@ gulp.task('sass', function() {
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest(config.path.css));
 });
+
+// JS
+// ==============================
+var browserify = require('browserify'),
+	concat = require('gulp-concat');
+
+gulp.task('js', function() {
+	return gulp.src(config.path.js_src + '**/*.js')
+	.pipe(plumber({
+		errorHandler: logger.error
+	}))
+	.pipe(sourcemaps.init())
+	.pipe(through2.obj(function (file, enc, next) {
+		browserify(file.path)
+		.bundle(function(err, res) {
+			file.contents = res;
+			next(null, file);
+		});
+	}))
+	.pipe(concat('scripts.js'))
+	.pipe(sourcemaps.write())
+	.pipe(gulp.dest(config.path.js));
+});
