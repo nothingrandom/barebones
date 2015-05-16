@@ -34,3 +34,39 @@ config.path.fonts = config.path.assets + 'fonts/';
 config.path.css = config.path.assets + 'css/';
 config.path.js = config.path.assets + 'js/';
 config.path.img = config.path.assets + 'images/';
+
+// SASS / SCSS > CSS
+// ==============================
+var autoprefixer = require('gulp-autoprefixer'),
+	sass = require('gulp-sass');
+
+gulp.task('sass', function() {
+	return gulp.src(config.path.sass + '**/*.{scss,sass}')
+	.pipe(plumber({
+		errorHandler: logger.error
+	}))
+	.pipe(sourcemaps.init())
+	.pipe(sass({
+		includePaths: [
+			config.path.vendor
+		],
+		precision: 10
+	}))
+	.pipe(sourcemaps.write({
+		includeContent: false
+	}))
+	.pipe(sourcemaps.init({
+		loadMaps: true
+	}))
+	.pipe(autoprefixer({
+		browsers: [
+		'> 1%',
+		'last 2 versions',
+		'Firefox ESR',
+		'Opera 12.1',
+		'IE 9'
+		]
+	}))
+	.pipe(sourcemaps.write())
+	.pipe(gulp.dest(config.path.css));
+});
