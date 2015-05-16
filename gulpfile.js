@@ -11,6 +11,10 @@ var del = require('del'),
 var plumber = require('gulp-plumber'),
 	sourcemaps = require('gulp-sourcemaps');
 
+// Task Aliases
+// ==============================
+gulp.task('default', ['sass', 'js', 'images']);
+
 // Config
 // ==============================
 var config = {
