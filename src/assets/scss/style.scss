@@ -2,7 +2,7 @@
 @import "reset", "variables", "utilities", "colors", "fonts";
 
 // Grid
-@import "grid/";
+@import "grid/global", "grid/grid", "grid/block-grid";
 
 // YOUR STYLES HERE //
 html {
