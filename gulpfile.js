@@ -93,3 +93,20 @@ gulp.task('js', function() {
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest(config.path.js));
 });
+
+// Images
+// ==============================
+var changed = require('gulp-changed'),
+	imagemin = require('gulp-imagemin'),
+	pngquant = require('imagemin-pngquant');
+
+gulp.task('images', function() {
+	return gulp.src(config.path.images + '**/*.{png,gif,jpg,jpeg,svg}')
+	.pipe(changed(config.path.img))
+	.pipe(imagemin({
+		optimizationLevel: 3,
+		progressive: true,
+		use: [pngquant()]
+	}))
+	.pipe(gulp.dest(config.path.img));
+});
