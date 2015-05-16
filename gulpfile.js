@@ -180,3 +180,22 @@ gulp.task('size', function() {
 		showFiles: true
 	}));
 })
+
+// Watch
+// ==============================
+gulp.task('watch', ['default'], function(done) {
+	gulp.watch(config.path.sass + '**/*.{sass,scss}', function(event) {
+		logger.log(gutil.colors.magenta(event.path, gutil.colors.white(event.type)));
+		return gulp.start('sass');
+	});
+
+	gulp.watch([config.path.js_src + '**/*.js'], function(event) {
+		logger.log(gutil.colors.magenta(event.path, gutil.colors.white(event.type)));
+		return gulp.start('js');
+	});
+
+	gulp.watch([config.path.images + '**/*.{png,gif,jpg,jpeg,svg}'], function(event) {
+		logger.log(gutil.colors.green(event.path, gutil.colors.white(event.type)));
+		return gulp.start('images');
+	});
+});
