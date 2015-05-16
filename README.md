@@ -88,7 +88,6 @@ CSS reset inspired by both [normalize.css](http://necolas.github.io/normalize.cs
 ##### utilities
 A wide range of mixins and functions. All self-documenting.
 
-**Some of my favorites**
 ###### functions
 - em (convert px to em)
 - rem (convert px to rem)
