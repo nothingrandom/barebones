@@ -169,6 +169,30 @@ gulp.task('compress:js', function() {
 	.pipe(gulp.dest(config.path.build + 'js/'));
 });
 
+// Notifications
+// ==============================
+var notify = require('gulp-notify');
+
+var logger = {
+	log: function() {
+		var parts;
+		parts = 1 <= arguments.length ? [].slice.call(arguments, 0) : [];
+		return gutil.log.call(null, logger.format.apply(null, parts));
+	},
+	format: function() {
+		var parts;
+		parts = 1 <= arguments.length ? [].slice.call(arguments, 0) : [];
+		return parts.join(' ').replace(config.path.root, '', 'g');
+	},
+	error: function(error) {
+		notify.onError({
+			title: 'Error (' + error.plugin + ')',
+			message: logger.format(error.message)
+		}).apply(this, arguments);
+
+		return this.emit('end');
+	}
+};
 
 // File size
 // ==============================
