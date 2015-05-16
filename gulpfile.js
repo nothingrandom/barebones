@@ -114,3 +114,27 @@ gulp.task('images', function() {
 	}))
 	.pipe(gulp.dest(config.path.img));
 });
+
+// Compression
+// ==============================
+var csso = require('gulp-csso'),
+	uncss = require('gulp-uncss');
+
+gulp.task('compress:css', function() {
+	return gulp.src(config.path.css + '**/*.css')
+	.pipe(size({
+		title: 'before',
+		showFiles: true
+	}))
+	.pipe(uncss({
+		html: [config.path.doc + '**/*.{html,htm}', 'http://localhost']
+	}))
+	.pipe(csso())
+	.pipe(size({
+		title: 'after',
+		showFiles: true
+	}))
+	.pipe(gulp.dest(config.path.build + 'css/'));
+});
+
+
