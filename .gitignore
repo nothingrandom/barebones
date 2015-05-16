@@ -92,3 +92,8 @@ node_modules
 ### Sass ###
 .sass-cache
 *.css.map
+
+### barebones ###
+src/assets/css
+src/assets/js
+build/
