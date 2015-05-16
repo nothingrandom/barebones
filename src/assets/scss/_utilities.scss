@@ -174,8 +174,9 @@
 // ==============================
 
 // pallette
+// @see https://twitter.com/thecodezombie/status/595977653296996354/photo/1
 @function palette($palette, $tone: "base") {
-	@return map-get(map-get($paleettes, $palette), $tone);
+	@return map-get(map-get($palettes, $palette), $tone);
 }
 
 // rgba-convert
