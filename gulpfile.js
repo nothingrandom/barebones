@@ -118,7 +118,11 @@ gulp.task('images', function() {
 // Compression
 // ==============================
 var csso = require('gulp-csso'),
-	uncss = require('gulp-uncss');
+	uncss = require('gulp-uncss'),
+	stripify = require('stripify'),
+	uglify = require('gulp-uglify');
+
+gulp.task('compress', ['compress:css', 'compress:js']);
 
 gulp.task('compress:css', function() {
 	return gulp.src(config.path.css + '**/*.css')
@@ -135,6 +139,34 @@ gulp.task('compress:css', function() {
 		showFiles: true
 	}))
 	.pipe(gulp.dest(config.path.build + 'css/'));
+});
+
+gulp.task('compress:js', function() {
+	return gulp.src(config.path.js_src + '**/*.js')
+	.pipe(plumber({
+		errorHandler: logger.error
+	}))
+	.pipe(sourcemaps.init())
+	.pipe(through2.obj(function (file, enc, next) {
+		browserify(file.path)
+		.transform('stripify')
+		.bundle(function(err, res) {
+			file.contents = res;
+			next(null, file);
+		});
+	}))
+	.pipe(concat('scripts.js'))
+	.pipe(sourcemaps.write())
+	.pipe(size({
+		title: 'before',
+		showFiles: true
+	}))
+	.pipe(uglify())
+	.pipe(size({
+		title: 'after',
+		showFiles: true
+	}))
+	.pipe(gulp.dest(config.path.build + 'js/'));
 });
 
 
