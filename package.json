@@ -6,6 +6,9 @@
 		"type": "git",
 		"url": "git@github.com:nothingrandom/barebones.git"
 	},
+	"dependencies": {
+		"stream-browserify": "^1.0.0"
+	},
 	"devDependencies": {
 		"browserify": "^10.2.0",
 		"del": "^1.1.1",
