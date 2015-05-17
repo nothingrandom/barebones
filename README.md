@@ -10,7 +10,7 @@
 
 ## Quick Start
 1. Clone the repo
-2. Run `npm intall`
+2. Run `npm install`
 3. Write code, compile with `gulp`
 4. Build something awesome
 
