@@ -126,10 +126,10 @@ var csso = require('gulp-csso'),
 
 gulp.task('compress', ['compress:css', 'compress:js']);
 
-gulp.task('compress:css', function() {
+gulp.task('compress:css', ['sass'], function(done) {
 	return gulp.src(config.path.css + '**/*.css')
 	.pipe(size({
-		title: 'before',
+		title: 'CSS before',
 		showFiles: true
 	}))
 	.pipe(uncss({
@@ -137,13 +137,13 @@ gulp.task('compress:css', function() {
 	}))
 	.pipe(csso())
 	.pipe(size({
-		title: 'after',
+		title: 'CSS after',
 		showFiles: true
 	}))
 	.pipe(gulp.dest(config.path.build + 'css/'));
 });
 
-gulp.task('compress:js', function() {
+gulp.task('compress:js', ['js'], function(done) {
 	return gulp.src(config.path.js_src + '**/*.js')
 	.pipe(plumber({
 		errorHandler: logger.error
@@ -160,12 +160,12 @@ gulp.task('compress:js', function() {
 	.pipe(concat('scripts.js'))
 	.pipe(sourcemaps.write())
 	.pipe(size({
-		title: 'before',
+		title: 'JS before',
 		showFiles: true
 	}))
 	.pipe(uglify())
 	.pipe(size({
-		title: 'after',
+		title: 'JS after',
 		showFiles: true
 	}))
 	.pipe(gulp.dest(config.path.build + 'js/'));
