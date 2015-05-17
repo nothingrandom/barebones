@@ -3,5 +3,5 @@
 	"user": "",
 	"pass": "",
 	"port": "21",
-	"path": "/"
+	"path": "/public_html"
 }
