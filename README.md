@@ -31,36 +31,50 @@
 ### gulpfile
 The gulpfile is built with the front end developer in mind, with the aim of not being cluttered or slow.
 
-##### `gulp`
+#### `gulp`
 The basis of this task is simple. It will compile all of your sass, js, and images.
+> `gulp = gulp js; gulp sass; gulp images`
 
-##### `gulp watch`
+#### `gulp watch`
 This task takes the default `gulp` task and watches for future changes.
+> `gulp watch = gulp default; gulp watch`
 
-##### `gulp sass`
+#### `gulp sass`
 All you need to do it write your scss/sass in the folder "src/assets/scss" and this task will compile to css. Compiled files can be found in the "src/assets/css" folder.
+> `gulp sass`
 
-##### `gulp js`
+#### `gulp js`
 Just write your javascript in the "src/assets/js_src" folder and this gulp task will compile all the different files into one. Compiled files can be found in the "src/assets/js" folder.
+>`gulp js`
 
-##### `gulp images`
+#### `gulp images`
 Images are big. That doesn't need to be the case. Place your images in the "src/assets/images_src" folder and this task will compress them and place them within the "src/assets/images" folder.
+>`gulp images`
 
-##### `gulp compress`
+#### `gulp compress`
 When you get to the end of the project and are deploying, you no longer need to have pretty code. Instead you need small files. Run this task to achieve that. The compressed files can be found in "build/".
+> `gulp compress = gulp js; gulp sass; gulp compress:js; gulp compress:sass`
 
 > **Note**
 
 > - Unused css styles will be trimmed from the compressed stylesheets
 > - `console.log` lines will be trimmed from the compressed JS
+> - If using .php files instead of .html, localhost is required
 
-##### `gulp build`
+#### `gulp build:clean` and `gulp deploy:clean`
+The clean task does simply that, empty out the selected destination folder. Normally run before a task to make sure that the end result is as tidy and bug free as possible.
+`gulp build:clean` empties the "build/" folder.
+`gulp deploy:clean` empties the path chosen in your "ftpconfig.json" file.
+
+#### `gulp build`
 When you're ready to hand over the project, run this task and all the important stuff will be compressed and copied over to the "build" folder.
+> `gulp build = gulp build:clean; gulp compress; gulp build:html; gulp images; gulp build:images; gulp build:size`
 
-##### `gulp deploy`
+#### `gulp deploy`
 Run this task to copy your build folder over to your server via FTP. Enter your credentials in the "ftpconfig.json" file. You can also run `gulp deploy:clean` to delete the files within the path you're using.
+> `gulp deploy = gulp deploy:clean; gulp build; gulp deploy`
 
-##### `gulp notify`
+#### `gulp notify`
 This runs in the background. If you're using OS X, when something bad happens you'll get a notification so you can go and fix it.
 
 ###### ToDo
