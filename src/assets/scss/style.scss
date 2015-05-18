@@ -4,9 +4,11 @@
 // Grid
 @import "grid/global", "grid/grid", "grid/block-grid";
 
-// YOUR STYLES HERE //
 html {
 	@include font-smoothing;
 }
+
+// YOUR STYLES HERE
+// ==============================
 
 @import "mobile";
