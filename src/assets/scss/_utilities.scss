@@ -142,6 +142,19 @@
 	}
 }
 
+// screen-reader
+// @see http://a11yproject.com/posts/how-to-hide-content/
+@mixin screen-reader {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
 // Screen sizes
 // ==============================
 @mixin screen-max($max-width) {
