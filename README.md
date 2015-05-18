@@ -18,13 +18,16 @@ Barebones is an advanced and powerful project wireframe. It's build by front end
 ## What's included
 - Advanced gulpfile
   - Compile scss/sass to css
-  - Compile multiple JS files with browsify
+  - Compile multiple JS files with browserify
   - Image minification
   - Build and deploy for release
   - Notifications on Mac
 - SCSS structure
   - Normalize / Reset CSS
   - Advanced mixins
+- Javascript
+  - jQuery using npm and browserify
+  - modernizer 3
 - Lightweight grid (coming soon)
 
 ----------
