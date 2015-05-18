@@ -11,7 +11,7 @@ Barebones is an advanced and powerful project wireframe. It's build by front end
 ----------
 
 ## Quick Start
-1. Clone the repo _or_ [Download the latest release](https://github.com/nothingrandom/barebones/archive/master.zip)
+1. Clone the repo _or_ [download the latest release](https://github.com/nothingrandom/barebones/archive/master.zip)
 2. Run `npm install` to install the devDependencies
 3. Compile your code with `gulp`
 
