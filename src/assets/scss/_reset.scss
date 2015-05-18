@@ -16,6 +16,7 @@ html,
 body {
 	overflow-x: hidden;
 	height: 100%;
+	font-size: 1em;
 }
 
 body {
@@ -52,13 +53,22 @@ summary {
 }
 
 // Inline block not defined correctly in IE 8-9
-// Vertical alignment should be baseline
 audio,
 canvas,
 progress,
 video {
 	display: inline-block;
-	vertical-align: baseline;
+}
+
+// Remove gap between elements and their containers
+audio,
+canvas,
+iframe,
+img,
+progress,
+svg,
+video {
+	vertical-align: middle;
 }
 
 // Stop modern browsers from showing auto without controls.
@@ -128,6 +138,12 @@ sup {
 
 sub {
 	bottom: -.25em;
+}
+
+// @see https://twitter.com/miketaylr/status/12228805301
+::selection,
+::-moz-selection {
+	text-shadow: none !important;
 }
 
 // Embedded content
@@ -293,8 +309,10 @@ legend {
 }
 
 // Remove default vertical scrollbar in IE 8-11
+// Only allow for vertical resize
 textarea {
 	overflow: auto;
+	resize: vertical;
 }
 
 // Prevent inherit from lines 84-88
@@ -332,4 +350,19 @@ ul {
 // Prevent focus outline on links that cannot be accessed via keyboard
 [tabindex="-1"]:focus {
 	outline: none !important;
+}
+
+// Helper classes
+// ==============================
+.hide {
+	display: none !important;
+}
+
+.show {
+	display: block !important;
+}
+
+.hidden {
+	display: none !important;
+	visibility: hidden !important;
 }
