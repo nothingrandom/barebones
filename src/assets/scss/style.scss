@@ -1,11 +1,11 @@
-// Imports
+// Import barebones scss structure
 @import "reset", "variables", "utilities", "colors", "fonts";
 
 // Grid
-@import "grid/global", "grid/grid", "grid/block-grid";
+@import "grid";
 
 html {
-	@include font-smoothing;
+	@include font-smoothing(on);
 }
 
 // YOUR STYLES HERE
