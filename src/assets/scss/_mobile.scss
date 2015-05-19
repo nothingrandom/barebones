@@ -1,24 +1,30 @@
-// Large desktop
+// 1500+
 @include screen-min($screen-xl) {
 
 }
 
-// Tablets
+// 769 - 1024
 @include screen-range($screen-md + 1, $screen-lg) {
-
 }
 
-// Large phone
+// Below 768
+@include screen-max($screen-md) {
+	body {
+		text-rendering: optimizeSpeed;
+	}
+}
+
+// 481 - 768
 @include screen-range($screen-sm +1, $screen-md) {
 
 }
 
-// Small phones
+// 221 - 481
 @include screen-range($screen-mu + 1, $screen-sm) {
 
 }
 
-// Smart watches
+// Below 220
 @include screen-max($screen-mu) {
 
 }
