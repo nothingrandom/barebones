@@ -69,11 +69,11 @@
 	font-weight: $weight;
 	font-style: $style;
 
-		src: url("#{$file-path}.eot");
-		src: url("#{$file-path}.eot?#iefix") format("embedded-opentype"),
-			 url("#{$file-path}.woff") format("woff"),
-			 url("#{$file-path}.ttf") format("truetype"),
-			 url("#{$file-path}.svg##{$font-family}") format("svg");
+	src: url("#{$file-path}.eot");
+	src: url("#{$file-path}.eot?#iefix") format("embedded-opentype"),
+		 url("#{$file-path}.woff") format("woff"),
+		 url("#{$file-path}.ttf") format("truetype"),
+		 url("#{$file-path}.svg##{$font-family}") format("svg");
   }
 }
 
