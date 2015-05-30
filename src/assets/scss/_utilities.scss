@@ -19,7 +19,7 @@
 // @param $value: Input px value
 // @param $px-reference: Reference px size (font-size of self/parent)
 @function em($value, $px-reference: $base-font-size) {
-	@return ($value / $px-reference) + em;
+	@return ($value / $px-reference) * 1em;
 }
 
 // rem
