@@ -3,6 +3,13 @@
 // based off of
 // @see normalize: http://necolas.github.io/normalize.css/
 // @see Reset CSS: http://meyerweb.com/eric/tools/css/reset/
+// with extras taken from bootstrap/foundation
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
 
 html {
 	overflow-y: scroll;
@@ -20,6 +27,7 @@ body {
 }
 
 body {
+	position: relative;
 	min-height: 100%;
 
 	// Remove default margin
@@ -91,6 +99,10 @@ template {
 // Remove that gray background color from links in IE 10
 a {
 	background-color: transparent;
+
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 // Text
@@ -153,17 +165,10 @@ sub {
 // Set as a block for styling
 img {
 	display: block;
+	max-width: 100%;
 	height: auto;
 	border: 0;
-
-	// Prevents an image from being dragged on OS X or being right clicked and saved
-	pointer-events: none;
-
-	// Unless it's a link
-	a,
-	& a {
-		pointer-events: auto;
-	}
+	-ms-interpolation-mode: bicubic;
 }
 
 // Correct overflow hidden in IE 9-11
