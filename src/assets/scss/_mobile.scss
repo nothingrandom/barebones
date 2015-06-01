@@ -19,12 +19,7 @@
 
 }
 
-// 221 - 481
-@include screen-range($screen-mu + 1, $screen-sm) {
-
-}
-
-// Below 220
-@include screen-max($screen-mu) {
+// Below 480
+@include screen-max($screen-sm) {
 
 }
