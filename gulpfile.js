@@ -105,9 +105,17 @@ gulp.task('js', function() {
 // ==============================
 var changed = require('gulp-changed'),
 	imagemin = require('gulp-imagemin'),
-	pngquant = require('imagemin-pngquant');
+	pngquant = require('imagemin-pngquant'),
+	svg2png = require('gulp-svg2png');
 
-gulp.task('images', function() {
+gulp.task('images:svg', function() {
+	return gulp.src(config.path.images + '**/*.svg')
+	.pipe(changed(config.path.img))
+	.pipe(svg2png())
+	.pipe(gulp.dest(config.path.images));
+});
+
+gulp.task('images', ['images:svg'], function(done) {
 	return gulp.src(config.path.images + '**/*.{png,gif,jpg,jpeg,svg}')
 	.pipe(changed(config.path.img))
 	.pipe(imagemin({
