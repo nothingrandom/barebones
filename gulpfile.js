@@ -29,6 +29,7 @@ var config = {
 config.path.doc = config.path.root + 'src/';
 config.path.assets = config.path.doc + 'assets/';
 config.path.build = config.path.root + 'build/';
+config.path.buildassets = config.path.root + 'build/assets/';
 
 // Source
 config.path.sass = config.path.assets + 'scss/';
@@ -140,7 +141,7 @@ gulp.task('compress:css', ['sass'], function(done) {
 		title: 'CSS after',
 		showFiles: true
 	}))
-	.pipe(gulp.dest(config.path.build + 'css/'));
+	.pipe(gulp.dest(config.path.buildassets + 'css/'));
 });
 
 gulp.task('compress:js', ['js'], function(done) {
@@ -168,7 +169,7 @@ gulp.task('compress:js', ['js'], function(done) {
 		title: 'JS after',
 		showFiles: true
 	}))
-	.pipe(gulp.dest(config.path.build + 'js/'));
+	.pipe(gulp.dest(config.path.buildassets + 'js/'));
 });
 
 // Build
@@ -186,16 +187,16 @@ gulp.task('build:html', function() {
 
 gulp.task('build:fonts', function() {
 	return gulp.src(config.path.fonts + '**/*.*')
-	.pipe(gulp.dest(config.path.build));
+	.pipe(gulp.dest(config.path.buildassets + 'fonts'));
 })
 
 gulp.task('build:images', ['images'], function(done) {
-	return gulp.src(config.path.img)
-	.pipe(gulp.dest(config.path.build));
+	return gulp.src(config.path.img + '**/*.*')
+	.pipe(gulp.dest(config.path.buildassets + 'images'));
 })
 
 gulp.task('build', function(cb) {
-	runSequence('build:clean', 'compress', 'build:html', 'build:images', 'build:size', cb);
+	runSequence('build:clean', 'compress', 'build:html', 'build:images', 'build:fonts', 'build:size', cb);
 })
 
 gulp.task('build:size', function() {
