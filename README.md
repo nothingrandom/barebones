@@ -27,8 +27,8 @@ Barebones is an advanced and powerful project wireframe. It's build by front end
   - Advanced mixins
 - Javascript
   - jQuery using npm and browserify
-  - modernizer 3
-- Lightweight grid (coming soon)
+  - Custom modernizer 3.1 build
+- [Foundation Grid](http://foundation.zurb.com/docs/components/grid.html)
 
 ----------
 
