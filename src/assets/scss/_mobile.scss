@@ -4,7 +4,7 @@
 }
 
 // 769 - 1024
-@include screen-range($screen-md + 1, $screen-lg) {
+@include screen-range($screen-md + .063, $screen-lg) {
 }
 
 // Below 768
@@ -15,7 +15,7 @@
 }
 
 // 481 - 768
-@include screen-range($screen-sm +1, $screen-md) {
+@include screen-range($screen-sm +.063, $screen-md) {
 
 }
 
