@@ -133,7 +133,7 @@ var csso = require('gulp-csso'),
 	stripify = require('stripify'),
 	uglify = require('gulp-uglify');
 
-gulp.task('compress', ['compress:css', 'compress:js']);
+gulp.task('compress', ['compress:css', 'compress:js-srcipts', 'compress:js-vendor']);
 
 gulp.task('compress:css', ['sass'], function(done) {
 	return gulp.src(config.path.css + '**/*.css')
@@ -152,7 +152,7 @@ gulp.task('compress:css', ['sass'], function(done) {
 	.pipe(gulp.dest(config.path.buildassets + 'css/'));
 });
 
-gulp.task('compress:js', ['js'], function(done) {
+gulp.task('compress:js-scripts', ['js'], function(done) {
 	return gulp.src(config.path.js_src + '**/*.js')
 	.pipe(plumber({
 		errorHandler: logger.error
@@ -178,6 +178,23 @@ gulp.task('compress:js', ['js'], function(done) {
 		showFiles: true
 	}))
 	.pipe(gulp.dest(config.path.buildassets + 'js/'));
+});
+
+gulp.task('compress:js-vendor', ['js'], function(done) {
+	return gulp.src(config.path.js + 'vendor/**/*.js')
+	.pipe(plumber({
+		errorHandler: logger.error
+	}))
+	.pipe(size({
+		title: 'JS before',
+		showFiles: true
+	}))
+	.pipe(uglify())
+	.pipe(size({
+		title: 'JS after',
+		showFiles: true
+	}))
+	.pipe(gulp.dest(config.path.buildassets + 'js/vendor/'));
 });
 
 // Build

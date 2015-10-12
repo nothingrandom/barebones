@@ -95,5 +95,5 @@ node_modules
 
 ### barebones ###
 src/assets/css
-src/assets/js
+src/assets/js/scripts.js
 build/
