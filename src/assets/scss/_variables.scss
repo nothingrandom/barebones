@@ -2,13 +2,10 @@ $base-font-size: 16px !default;
 
 // Screen breakpoints
 // ==============================
-$screen-mu: em(220px); // useful for smartwatches
-$screen-xs: em(320px);
-$screen-sm: em(480px);
-$screen-md: em(768px);
-$screen-lg: em(1024px);
-$screen-sd: em(1280px);
-$screen-xl: em(1500px);
+$screen-sm: 40em;
+$screen-md: 64em;
+$screen-lg: 90em;
+$screen-xl: 120em;
 
 // Grid settings
 // ==============================
