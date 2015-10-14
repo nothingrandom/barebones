@@ -142,6 +142,22 @@
 	}
 }
 
+// background-image-retina
+// @param $file: Location of @2x file
+// @param $type: Extension of @2x file
+// @param $width: Width of @2x image (in @1x dimensions)
+// @param $height: Height of @2x image (in @1x dimensions)
+@mixin background-image-retina($file, $type, $width, $height) {
+	background-image: url($file + "." + $type);
+
+	@include retina {
+		& {
+			background-image: url($file + "@2x." + $type);
+			-webkit-background-size: $width $height;
+		}
+	}
+}
+
 // chromeonly
 // @param @content: Add the styles you wish to apply to chrome
 @mixin chromeonly {
