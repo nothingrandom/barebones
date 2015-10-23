@@ -3,4 +3,3 @@ node_js:
   - "stable"
 before_script:
   - gulp
-  - gulp build
