@@ -133,7 +133,7 @@ var csso = require('gulp-csso'),
 	stripify = require('stripify'),
 	uglify = require('gulp-uglify');
 
-gulp.task('compress', ['compress:css', 'compress:js-srcipts', 'compress:js-vendor']);
+gulp.task('compress', ['compress:css', 'compress:js-scripts', 'compress:js-vendor']);
 
 gulp.task('compress:css', ['sass'], function(done) {
 	return gulp.src(config.path.css + '**/*.css')
@@ -199,10 +199,10 @@ gulp.task('compress:js-vendor', ['js'], function(done) {
 
 // Build
 // ==============================
-gulp.task('build:clean', function(cb) {
+gulp.task('build:clean', function() {
 	del([
 		'build/**/*'
-	], cb);
+	]);
 })
 
 gulp.task('build:html', function() {
