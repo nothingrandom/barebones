@@ -128,8 +128,7 @@ gulp.task('images', ['images:svg'], function(done) {
 
 // Compression
 // ==============================
-var csso = require('gulp-csso'),
-	uncss = require('gulp-uncss'),
+var nano = require('gulp-cssnano'),
 	stripify = require('stripify'),
 	uglify = require('gulp-uglify');
 
@@ -141,10 +140,7 @@ gulp.task('compress:css', ['sass'], function(done) {
 		title: 'CSS before',
 		showFiles: true
 	}))
-	.pipe(uncss({
-		html: [config.path.doc + '**/*.{html,htm}', 'http://localhost']
-	}))
-	.pipe(csso())
+	.pipe(nano())
 	.pipe(size({
 		title: 'CSS after',
 		showFiles: true
