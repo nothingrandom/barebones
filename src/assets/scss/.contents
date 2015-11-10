@@ -1,0 +1,33 @@
+==============================
+*   CSS TABLE OF CONTENTS   *
+==============================
+
+SETTINGS
+==========
+_colors				* globablly used colors
+_variables			* globally used variables and config
+
+TOOLS
+==========
+_utilities			* useful mixins and extends
+
+GRID
+==========
+_grid				* foundation grid settings and import
+/foundation			* foundation as SCSS files
+
+GENERIC
+==========
+_reset				* browser style reset
+
+TEXT
+==========
+_fonts				* font package includes and base text styles
+
+RESPONSIVE / A11Y
+==========
+_mobile				* responsive stylesheets
+
+STYLE
+==========
+style				* stylesheet imports and page styling
