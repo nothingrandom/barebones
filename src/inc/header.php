@@ -1,3 +1,3 @@
-<header class="header main-header">
+<header class="header header--main">
 
 </header>
