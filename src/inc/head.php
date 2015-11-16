@@ -19,14 +19,14 @@
 		<link rel="icon" type="image/png" href="assets/images/.png"/>
 
 		<!-- stylesheets -->
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
 
 		<!-- scripts -->
-		<script src="assets/js/scripts.js" type="text/javascript"></script>
+		<script src="/assets/js/scripts.js" type="text/javascript"></script>
 
 		<!-- IE specifics -->
 		<!--[if IE]><!-->
-			<script src="assets/js/vendor/modernizr.js" type="text/javascript"></script>
+			<script src="/assets/js/vendor/modernizr.js" type="text/javascript"></script>
 		<!--<![endif]-->
 	</head>
 	<body>
