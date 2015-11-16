@@ -75,7 +75,8 @@ gulp.task('sass', function() {
 		]
 	}))
 	.pipe(sourcemaps.write())
-	.pipe(gulp.dest(config.path.css));
+	.pipe(gulp.dest(config.path.css))
+	.pipe(browserSync.stream());
 });
 
 // JS
@@ -293,16 +294,27 @@ gulp.task('size', function() {
 	.pipe(size({
 		showFiles: true
 	}));
-})
+});
 
-// Watch
+// Browser Sync
 // ==============================
-gulp.task('watch', ['default'], function(done) {
+var browserSync = require('browser-sync').create();
+
+gulp.task('browser-sync', ['sass'], function() {
+	browserSync.init({
+		proxy: 'localhost'
+	});
+
 	gulp.watch(config.path.sass + '**/*.{sass,scss}', function(event) {
 		logger.log(gutil.colors.magenta(event.path, gutil.colors.white(event.type)));
 		return gulp.start('sass');
 	});
+	gulp.watch(config.path.doc + '**/*.{html,htm,php}').on('change', browserSync.reload);
+});
 
+// Watch
+// ==============================
+gulp.task('watch', ['default', 'browser-sync'], function(done) {
 	gulp.watch([config.path.js_src + '**/*.js'], function(event) {
 		logger.log(gutil.colors.magenta(event.path, gutil.colors.white(event.type)));
 		return gulp.start('js');
