@@ -34,7 +34,7 @@
 	#{$property}: $px-values;
 
 	// If there is only one (numeric) value, return the property/value line for it.
-	@if type-of($px-values) == "number" {
+	@if type-of($px-values) == 'number' {
 		#{$property}: rem($px-values);
 	}
 
@@ -44,9 +44,11 @@
 
 		@each $value in $px-values {
 			// If the value is zero or not a number, return it
-			@if $value == 0 or type-of($value) != "number" {
+			@if $value == 0 or type-of($value) != 'number' {
 				$rem-values: append($rem-values, $value);
-			} @else {
+			}
+
+			@else {
 				$rem-values: append($rem-values, rem($value));
 			}
 		}
@@ -69,11 +71,11 @@
 	font-weight: $weight;
 	font-style: $style;
 
-	src: url("#{$file-path}.eot");
-	src: url("#{$file-path}.eot?#iefix") format("embedded-opentype"),
-		 url("#{$file-path}.woff") format("woff"),
-		 url("#{$file-path}.ttf") format("truetype"),
-		 url("#{$file-path}.svg##{$font-family}") format("svg");
+	src: url('#{$file-path}.eot');
+	src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+		 url('#{$file-path}.woff') format('woff'),
+		 url('#{$file-path}.ttf') format('truetype'),
+		 url('#{$file-path}.svg##{$font-family}') format('svg');
   }
 }
 
@@ -119,8 +121,9 @@
 	&:before,
 	&:after {
 		display: table;
-		content: " ";
+		content: ' ';
 	}
+
 	&:after {
 		clear: both;
 	}
@@ -148,11 +151,11 @@
 // @param $width: Width of @2x image (in @1x dimensions)
 // @param $height: Height of @2x image (in @1x dimensions)
 @mixin background-image-retina($file, $type, $width, $height) {
-	background-image: url($file + "." + $type);
+	background-image: url($file + '.' + $type);
 
 	@include retina {
 		& {
-			background-image: url($file + "@2x." + $type);
+			background-image: url($file + '@2x.' + $type);
 			-webkit-background-size: $width $height;
 		}
 	}
@@ -232,7 +235,7 @@
 
 // pallette
 // @see https://twitter.com/thecodezombie/status/595977653296996354/photo/1
-@function palette($palette, $tone: "base") {
+@function palette($palette, $tone: 'base') {
 	@return map-get(map-get($palettes, $palette), $tone);
 }
 
@@ -300,4 +303,18 @@
 //@see http://stackoverflow.com/a/12335841
 @function strip-units($number) {
 	@return $number / ($number * 0 + 1);
+}
+
+// Styling
+// ==============================
+
+// hr-color
+// @param $color
+@mixin hr-color($color) {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid $color;
+	margin: 1em 0;
+	padding: 0;
 }
