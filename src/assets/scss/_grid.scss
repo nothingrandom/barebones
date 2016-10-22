@@ -1,6 +1,6 @@
 //	Foundation grid: http://foundation.zurb.com/docs/components/grid.html
 //------------------------------------------------------------------------------
-@import "foundation/foundation/functions";
+@import 'foundation/foundation/functions';
 
 // Prevent foundation outputting general styles
 $include-html-global-classes: false;
@@ -24,6 +24,6 @@ $total-columns: $grid-columns;
 // $xxlarge-range: (120.063em, 99999999em);
 
 // Include foundation grid
-@import "foundation/foundation/components/grid";
-@import "foundation/foundation/components/block-grid";
+@import 'foundation/foundation/components/grid';
+@import 'foundation/foundation/components/block-grid';
 

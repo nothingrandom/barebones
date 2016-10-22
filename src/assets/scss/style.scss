@@ -1,8 +1,8 @@
 // Import barebones scss structure
-@import "utilities", "reset", "variables", "colors", "fonts";
+@import 'utilities', 'reset', 'variables', 'colors', 'fonts';
 
 // Grid
-@import "grid";
+@import 'grid';
 
 html {
 	@include font-smoothing(on);
@@ -12,4 +12,4 @@ html {
 // YOUR STYLES HERE
 // ==============================
 
-@import "mobile";
+@import 'mobile';
