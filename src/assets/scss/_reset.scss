@@ -201,7 +201,7 @@ pre {
 	overflow: auto;
 }
 
-// Fixes odd strange "em" unit font size rendering in browsers
+// Fixes odd strange 'em' unit font size rendering in browsers
 code,
 kbd,
 pre,
@@ -213,7 +213,7 @@ samp {
 // Forms
 // ==============================
 
-// Limitation: By default, Chrome and Safari on OS X allow limited styling of "select", unless a border is set
+// Limitation: By default, Chrome and Safari on OS X allow limited styling of 'select', unless a border is set
 // Fixes variations of margins in Firefox, Safari, and Chrome
 // Correct color not being inherited
 // Correct font properties not being inherited
@@ -232,7 +232,7 @@ button {
 	overflow: visible;
 }
 
-// Fixes inconsistency with "text-transform" inheritance for "button" and "select"
+// Fixes inconsistency with 'text-transform' inheritance for 'button' and 'select'
 // Button style in IE 8-11, Firefox, and Opera
 // Select style in Firefox
 button,
@@ -241,11 +241,11 @@ select {
 }
 
 // Avoid webkit bug in Android 4 with native audio and video controls
-// Fix inability to style clickable "input" types in iOS 6
+// Fix inability to style clickable 'input' types in iOS 6
 button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
 	-moz-appearance: button;
 	-webkit-appearance: button;
 	cursor: pointer;
@@ -264,28 +264,28 @@ input::-moz-focus-inner {
 	border: 0;
 }
 
-// Fix Firefox setting "line-height" on "input" using "!important" in the UA stylesheet
+// Fix Firefox setting 'line-height' on 'input' using '!important' in the UA stylesheet
 input {
 	line-height: normal;
 }
 
-// Fix "box-sizing" set to "content-box" in IE 8-10
+// Fix 'box-sizing' set to 'content-box' in IE 8-10
 // Remove excess padding in IE 8-10
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
 	box-sizing: border-box;
 	padding: 0;
 }
 
 // Fix the cursor style for Chrome's buttons
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
 	height: auto;
 }
 
-// Fix "box-sizing" set to "border-box" in Safari and Chrome
-// Fix "appearance" set to "searchfield" in Safari and Chrome
-input[type="search"] {
+// Fix 'box-sizing' set to 'border-box' in Safari and Chrome
+// Fix 'appearance' set to 'searchfield' in Safari and Chrome
+input[type='search'] {
 	-moz-box-sizing: content-box;
 	-webkit-box-sizing: content-box;
 	box-sizing: content-box;
@@ -293,8 +293,8 @@ input[type="search"] {
 }
 
 // Remove inner padding and search cancel button in Safari and Chrome on OS X
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 }
@@ -353,7 +353,7 @@ ul {
 // ==============================
 
 // Prevent focus outline on links that cannot be accessed via keyboard
-[tabindex="-1"]:focus {
+[tabindex='-1']:focus {
 	outline: none !important;
 }
 
