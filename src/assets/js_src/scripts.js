@@ -1,1 +1,1 @@
-var $ = require('jquery'); // ^2.1.4 included
+var $ = require('jquery'); // ^3.1.0 included
