@@ -2,7 +2,7 @@
 
 [![Build status](https://travis-ci.org/nothingrandom/barebones.svg?branch=master)](https://travis-ci.org/nothingrandom/barebones)
 [![devDependency Status](https://david-dm.org/nothingrandom/barebones/dev-status.svg)](https://david-dm.org/nothingrandom/barebones#info=devDependencies)
-[![Built with gulp](http://nothingrandom.com/images/built-gulp.png)](http://gulpjs.com/)
+[![Built with gulp](http://nothingrandom.com/images/built-gulp.svg)](http://gulpjs.com/)
 
 **A lightweight starting point for web projects**
 
