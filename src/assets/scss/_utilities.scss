@@ -266,38 +266,6 @@
 	}
 }
 
-// hardware-acceleration
-// @param $value: Accepted values: [ON | off]
-@mixin hardware-acceleration($value: on) {
-	@if $value == on {
-		transform: translate3d(0, 0, 0);
-		backface-visibility: hidden;
-		perspective: 1000;
-	}
-
-	@else {
-		transform: none;
-		backface-visibility: visible;
-		perspective: none;
-	}
-}
-
-// hardware-acceleration
-// @param $value: Accepted values: [on | OFF]
-@mixin interaction($value: off) {
-	@if $value == off {
-		cursor: default;
-		user-select: none;
-		pointer-events: none;
-	}
-
-	@else {
-		cursor: auto;
-		user-select: all;
-		pointer-events: all;
-	}
-}
-
 // strip-units
 // @param $number
 //@see http://stackoverflow.com/a/12335841
