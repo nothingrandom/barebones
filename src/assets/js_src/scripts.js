@@ -1,1 +1,0 @@
-var $ = require('jquery'); // ^3.1.0 included
