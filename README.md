@@ -1,35 +1,22 @@
 # [barebones](http://barebones.io)
 
-[![Build status](https://travis-ci.org/nothingrandom/barebones.svg?branch=master)](https://travis-ci.org/nothingrandom/barebones)
-[![devDependency Status](https://david-dm.org/nothingrandom/barebones/dev-status.svg)](https://david-dm.org/nothingrandom/barebones#info=devDependencies)
-[![Built with gulp](http://nothingrandom.com/images/built-gulp.svg)](http://gulpjs.com/)
+Barebones is the starting point for stylesheets.
 
-**A lightweight starting point for web projects**
+### What you get
+In this project you'll find a great starting point for writing clean, functional stylesheets using scss.
 
-Barebones is an advanced and powerful project wireframe. It's build by front end developers for front end developers. It's designed to help speed up your development process, doing the heavy lifting while you can stick to creating new sites.
+I've been working on this project since 2012, so it's had a lot of trail, error, and experimentation go into it.
 
-----------
+The primary source of magic is in the `utilities` file, so I recommend you have a look through.
 
-## Quick Start
-1. Clone the repo _or_ [download the latest release](https://github.com/nothingrandom/barebones/archive/master.zip)
-2. Run `npm install` to install the devDependencies
-3. Compile your code with `gulp`
+### Wishlist (and issues)
+Any features you'd like to see? Any features don't work for you? Let me know with the issue tracker.
 
-## What's included
-- Advanced gulpfile
-  - Compile scss/sass to css
-  - Compile multiple JS files with browserify
-  - Image minification
-  - Build and deploy for release
-  - Notifications on Mac
-- SCSS structure
-  - Normalize / Reset CSS
-  - Advanced mixins
-- Javascript
-  - jQuery using npm and browserify
-  - Custom modernizer 3.1 build
-- [Foundation Grid](http://foundation.zurb.com/docs/components/grid.html)
+### Recommendations
+I suggest that you use this project alongside of [blendid](https://github.com/vigetlabs/blendid). Older users of barebones will remember that it once came with a full gulp setup. I was struggling to keep up with best practices and new tools, and found myself using Vue / React Starter where there was too much bulk here.
+
+I also recommend that you use this [scss-lint](https://github.com/nothingrandom/scss-lint-default.yml) config.
 
 ----------
 
-###### _Made by [nothingrandom](http://nothingrandom.com) :)_
+###### _Made by [Benjamin Hollway](http://nothingrandom.com) :)_
