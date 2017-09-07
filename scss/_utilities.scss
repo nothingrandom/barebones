@@ -1,0 +1,338 @@
+// scss-lint:disable all
+
+// Fonts and Text
+// ==============================
+// font-smoothing
+// @param $value: Accepted values: [ON | off]
+@mixin font-smoothing($value: on) {
+  @if $value == on {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @else {
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+// em
+// Convert px value to em equivalent
+// @param $value: Input px value
+// @param $px-reference: Reference px size (font-size of self/parent)
+@function em($value, $px-reference: $base-font-size) {
+  @return ($value / $px-reference) * 1em;
+}
+
+// rem
+// @param $px-value
+@function rem($px-value) {
+  @return $px-value / ($base-font-size / (1rem * 1));
+}
+
+// @see https://github.com/bitmanic/rem
+@mixin rem($property, $px-values) {
+  // Print the first line in pixel values
+  #{$property}: $px-values;
+
+  // If there is only one (numeric) value, return the property/value line for it.
+  @if type-of($px-values) == 'number' {
+    #{$property}: rem($px-values);
+  }
+
+  @else {
+    // Create an empty list that we can dump values into
+    $rem-values: ();
+
+    @each $value in $px-values {
+      // If the value is zero or not a number, return it
+      @if $value == 0 or type-of($value) != 'number' {
+        $rem-values: append($rem-values, $value);
+      }
+
+      @else {
+        $rem-values: append($rem-values, rem($value));
+      }
+    }
+
+    // Return the property and its list of converted values
+    #{$property}: $rem-values;
+  }
+}
+
+// font-face
+// Taken from Bourbon
+// @param $font-family: Name of the font
+// @param $file-path: Path to font (filename without extension)
+// @param $weight: Weight of font (default: normal)
+// @param $style: Style of font (default: normal)
+// @see https://github.com/thoughtbot/bourbon/blob/3dca2ecccaaa3db9cea8d74c8221fbde7e6284d8/app/assets/stylesheets/css3/_font-face.scss
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+
+    src: url('#{$file-path}.eot');
+    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+    url('#{$file-path}.woff') format('woff'),
+    url('#{$file-path}.ttf') format('truetype');
+  }
+}
+
+// placeholder
+// @param @content: Add styles for placeholders
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+    opacity: 1;
+  }
+
+  &::-moz-placeholder { // FF < 19
+    @content;
+    opacity: 1;
+  }
+
+  &::-moz-placeholder { // FF >= 19
+    @content;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+// selection
+// @param @content: Add styles for highlighted text
+@mixin selection {
+  &::-moz-selection {
+    @content;
+  }
+
+  &::selection {
+    @content;
+  }
+}
+
+// Layout
+// ==============================
+
+// clearfix
+@mixin clearfix {
+  &::before,
+  &::after {
+    display: block;
+    content: ' ';
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+
+// Columns
+@mixin columns($column-count: 2, $column-gap: 40px) {
+  column-count: $column-count;
+  column-gap: $column-gap;
+}
+
+
+// Device targetting
+// ==============================
+
+// retina
+// @param @content: Add the styles you wish to apply to retina
+@mixin retina {
+  @media
+  (min--moz-device-pixel-ratio: 1.3),
+  (-o-min-device-pixel-ratio: 2.6/2),
+  (-webkit-min-device-pixel-ratio: 1.3),
+  (min-device-pixel-ratio: 1.3),
+  (min-resolution: 1.3dppx) {
+    @content;
+  }
+}
+
+// background-image-retina
+// @param $file: Location of @2x file
+// @param $type: Extension of @2x file
+// @param $width: Width of @2x image (in @1x dimensions)
+// @param $height: Height of @2x image (in @1x dimensions)
+@mixin background-image-retina($file, $type, $width: auto, $height: auto) {
+  background-image: url($file + '.' + $type);
+
+  @include retina {
+    & {
+      background-image: url($file + '@2x.' + $type);
+      -webkit-background-size: $width $height;
+    }
+  }
+}
+
+// chromeonly
+// @param @content: Add the styles you wish to apply to chrome
+@mixin chromeonly {
+  @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+    @content;
+  }
+}
+
+// reader-hide
+// @param: Prevent content from being read by a screen reader
+// @see http://a11yproject.com/posts/how-to-hide-content/
+@mixin reader-hide {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+// Screen sizes
+// ==============================
+@mixin screen-max($max-width) {
+  @media screen
+  and (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin screen-min($min-width) {
+  @media screen
+  and (min-width: $min-width) {
+    @content;
+  }
+}
+
+@mixin screen-range($min-width, $max-width) {
+  @media screen
+  and (min-width: $min-width)
+  and (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin device-range($min-width, $max-width) {
+  @media screen
+  and (min-device-width: $min-width)
+  and (max-device-width: $min-width) {
+    @content;
+  }
+}
+
+// Breakpoint Mixin
+@mixin breakpoint($min: 0, $max: 0) {
+  $type: type-of($min);
+
+  @if $type == string {
+    @if $min == 'xxs' {
+      @include screen-min($screen-xxs) {
+        @content;
+      }
+    }
+    @else if $min == 'xs' {
+      @include screen-min($screen-xs) {
+        @content;
+      }
+    }
+    @else if $min == 'sm' {
+      @include screen-min($screen-sm) {
+        @content;
+      }
+    }
+    @else if $min == 'md' {
+      @include screen-min($screen-md) {
+        @content;
+      }
+    }
+    @else if $min == 'lg' {
+      @include screen-min($screen-lg) {
+        @content;
+      }
+    }
+  }
+
+  @else if $type == number {
+    @include device-range($min, $max) {
+      @content;
+    }
+  }
+}
+
+// Colors
+// ==============================
+
+// pallette
+// @see https://twitter.com/thecodezombie/status/595977653296996354/photo/1
+@function palette($palette, $tone: 'base') {
+  @return map-get(map-get($palettes, $palette), $tone);
+}
+
+// rgba-convert
+// @param $hexcolor: Hex color you want to be converted to a rgba value
+// @param $opacity: Value of alpha / opacity
+// @see https://alwaystwisted.com/articles/2013-05-06-smarter-rgba-fallbacks-with-sass
+@function rgba-convert($hexcolor, $opacity) {
+  @return rgba($hexcolor, $opacity);
+}
+
+// Other
+// ==============================
+
+// hardware-acceleration
+// @param $value: Accepted values: [on | off]
+@mixin hardware-acceleration($value: on) {
+  @if $value == on {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+
+  @else {
+    transform: none;
+    backface-visibility: visible;
+    perspective: none;
+  }
+}
+
+// hardware-acceleration
+// @param $value: Accepted values: [on | OFF]
+@mixin interaction($value: off) {
+  @if $value == off {
+    cursor: default;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  @else {
+    cursor: auto;
+    user-select: all;
+    pointer-events: all;
+  }
+}
+
+// strip-units
+// @param $number
+//@see http://stackoverflow.com/a/12335841
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+// Styling
+// ==============================
+
+// hr-color
+// @param $color
+@mixin hr-color($color) {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $color;
+  margin: 1em 0;
+  padding: 0;
+}
