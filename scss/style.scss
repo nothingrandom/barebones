@@ -5,11 +5,9 @@
 @import 'grid';
 
 html {
-	@include font-smoothing(on);
-	font-size: $base-font-size;
+  @include font-smoothing(on);
+  font-size: $base-font-size;
 }
 
 // YOUR STYLES HERE
 // ==============================
-
-@import 'mobile';
