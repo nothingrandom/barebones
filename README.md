@@ -9,6 +9,8 @@ I've been working on this project since 2012, so it's had a lot of trail, error,
 
 The primary source of magic is in the `utilities` file, so I recommend you have a look through.
 
+I've noted the primary features in the [wiki](https://github.com/nothingrandom/barebonesio/wiki/What's-included).
+
 ### Wishlist (and issues)
 Any features you'd like to see? Any features don't work for you? Let me know with the issue tracker.
 
