@@ -1,6 +1,10 @@
-# [barebones](http://barebones.io)
+# [barebonesio](http://barebones.io)
 
-Barebones is the starting point for stylesheets.
+> barebonesio is the starting point for stylesheets.
+
+## Installation
+Using this project is fairly straight forward. I recommend that you use this project alongside of [blendid](https://github.com/vigetlabs/blendid).
+Just drop the contents of the `scss` folder into blendid's `stylesheet` folder and run either `yarn add browser-reset` or `npm install -save browser-reset`.
 
 ### What you get
 In this project you'll find a great starting point for writing clean, functional stylesheets using scss.
@@ -15,9 +19,8 @@ I've noted the primary features in the [wiki](https://github.com/nothingrandom/b
 Any features you'd like to see? Any features don't work for you? Let me know with the issue tracker.
 
 ### Recommendations
-I suggest that you use this project alongside of [blendid](https://github.com/vigetlabs/blendid). Older users of barebones will remember that it once came with a full gulp setup. I was struggling to keep up with best practices and new tools, and found myself using Vue / React Starter where there was too much bulk here.
 
-I also recommend that you use this [scss-lint](https://github.com/nothingrandom/scss-lint-default.yml) config.
+I recommend that you use this [scss-lint](https://github.com/nothingrandom/scss-lint-default.yml) config to keep you code clean and tidy.
 
 ----------
 

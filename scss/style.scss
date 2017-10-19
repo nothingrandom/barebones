@@ -1,5 +1,6 @@
 // Import barebones scss structure
-@import 'utilities', 'reset', 'variables', 'colors', 'fonts';
+@import 'browser-reset/reset.scss';
+@import 'utilities', 'variables', 'colors', 'fonts';
 
 // Grid
 @import 'grid';
