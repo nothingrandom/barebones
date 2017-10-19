@@ -1,14 +1,22 @@
 {
-  "name" : "barebones",
-  "description" : "The starting point for stylesheets",
-  "homepage" : "http://barebones.io",
-  "keywords" : ["scss", "css", "design", "web"],
-  "author" : "Benjamin Hollway <benjamin@nothingrandom.com>",
-  "contributors" : [],
-  "repository" : {
+  "name": "barebones",
+  "description": "The starting point for stylesheets",
+  "homepage": "http://barebones.io",
+  "keywords": [
+    "scss",
+    "css",
+    "design",
+    "web"
+  ],
+  "author": "Benjamin Hollway <benjamin@nothingrandom.com>",
+  "contributors": [],
+  "repository": {
     "type": "git",
     "url": "git://github.com/nothingrandom/barebones.git"
   },
-  "main" : "",
-  "version" : "2.0.0"
+  "main": "",
+  "version": "2.0.1",
+  "dependencies": {
+    "browser-reset": "^1.0.1"
+  }
 }
