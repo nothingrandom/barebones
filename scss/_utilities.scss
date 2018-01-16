@@ -195,16 +195,16 @@
 
 // Screen sizes
 // ==============================
-@mixin screen-max($max-width) {
+@mixin screen-min($min-width) {
   @media screen
-  and (max-width: $max-width) {
+  and (min-width: $min-width) {
     @content;
   }
 }
 
-@mixin screen-min($min-width) {
+@mixin screen-max($max-width) {
   @media screen
-  and (min-width: $min-width) {
+  and (max-width: $max-width) {
     @content;
   }
 }
@@ -225,7 +225,8 @@
   }
 }
 
-// Breakpoint Mixin
+// breakpoint (for mobile first)
+// @param @content for everything that is arg (@see _variables) and up
 @mixin breakpoint($min: 0, $max: 0) {
   $type: type-of($min);
 
@@ -258,7 +259,7 @@
   }
 
   @else if $type == number {
-    @include device-range($min, $max) {
+    @include screen-range($min, $max) {
       @content;
     }
   }
@@ -268,6 +269,8 @@
 // ==============================
 
 // pallette
+// @param $palette: Primary palette color as declared in _colors
+// @param $tone: Modifier of primary color, base by default
 // @see https://twitter.com/thecodezombie/status/595977653296996354/photo/1
 @function palette($palette, $tone: 'base') {
   @return map-get(map-get($palettes, $palette), $tone);
@@ -285,7 +288,7 @@
 // ==============================
 
 // hardware-acceleration
-// @param $value: Accepted values: [on | off]
+// @param $value: Accepted values: [ON | off]
 @mixin hardware-acceleration($value: on) {
   @if $value == on {
     transform: translate3d(0, 0, 0);
