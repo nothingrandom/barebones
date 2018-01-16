@@ -166,6 +166,14 @@
   }
 }
 
+// psudo
+// for use with ::before / ::after elements, as you always use these
+// @param $pos: Accepted values: [ABSOLUTE | relative | static | sticky | fixed]
+@mixin pseudo($pos: absolute, $display: block, $content: '') {
+  position: $pos;
+  display: $display;
+  content: $content;
+}
 
 // Device targetting
 // ==============================
