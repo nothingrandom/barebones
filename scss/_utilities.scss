@@ -132,7 +132,7 @@
 }
 
 
-// Columns
+// columns
 @mixin columns($column-count: 2, $column-gap: 40px) {
   column-count: $column-count;
   column-gap: $column-gap;
@@ -195,6 +195,7 @@
 
 // Screen sizes
 // ==============================
+
 @mixin screen-min($min-width) {
   @media screen
   and (min-width: $min-width) {
