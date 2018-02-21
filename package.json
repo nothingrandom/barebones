@@ -1,5 +1,5 @@
 {
-  "name": "barebones",
+  "name": "barebonesio",
   "description": "The starting point for stylesheets",
   "homepage": "http://barebones.io",
   "keywords": [
@@ -12,11 +12,11 @@
   "contributors": [],
   "repository": {
     "type": "git",
-    "url": "git://github.com/nothingrandom/barebones.git"
+    "url": "git://github.com/nothingrandom/barebonesio.git"
   },
   "main": "",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "dependencies": {
-    "browser-reset": "^1.0.1"
+    "browser-reset": "^1.0.4"
   }
 }
