@@ -10,10 +10,10 @@ Just drop the contents of the `scss` folder into blendid's `stylesheet` folder (
 ### What this is
 This project is a great starting point for writing clean, functional stylesheets using scss.
 
-##### Grid
+#### Grid
 This project includes [flexboxgrid](flexboxgrid.com) as a grid system. [Browser support](https://caniuse.com/#search=flexbox)
 
-##### Color Palettes
+#### Color Palettes
 I'm really good at creating a messy array of color variables. This palette system exists to "fix" that. Instead of using `$grey`, `$grey-light`, `$grey-lighter`, `$grey-lightest` you can break it down into categories. Your colors file will look a little like this
 
 ```
@@ -29,13 +29,13 @@ $palettes: (
 
 And when you need to color something, you can just do this `color: palette(grey, light)`
 
-##### REM and EM
+#### REM and EM
 There's REM and EM pixel conversions. `font-size: em(16px)` becomes `1em`
 
-##### Font Family
+#### Font Family
 Googling how to include a font package gets a bit irritating. Instead you can use the following syntax `@include font-face('Font Name', '/path/to/font', 400, normal);` and it will generate the font-face from `eot`, `eot?#iefix`, `woff` and `ttf. I use [FontPrep](https://github.com/briangonzalez/fontprep) to convert font files for this.
 
-##### Breakpoints
+#### Breakpoints
 Modern web means supporting screen sizes of all sorts. I like to build mobile first, so that's the way my breakpoints work.
 
 ```
@@ -54,7 +54,7 @@ Modern web means supporting screen sizes of all sorts. I like to build mobile fi
 
 You can find the variables for these in the `scss/_variables` file
 
-##### The rest
+#### The rest
 I've done a fair job of writing a lot of comments in the `scss/_utilities` file, so a quick read through will give a good overview of everything included
 
 
@@ -67,4 +67,4 @@ I recommend that you use this [scss-lint](https://github.com/nothingrandom/scss-
 
 ----------
 
-###### _Made by [Benjamin Hollway](http://nothingrandom.com) :)_
+##### _Made by [Benjamin Hollway](http://nothingrandom.com) :)_
