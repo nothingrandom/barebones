@@ -14,9 +14,13 @@
     "type": "git",
     "url": "git://github.com/nothingrandom/barebonesio.git"
   },
-  "main": "",
+  "main": "style.scss",
   "version": "2.0.2",
   "dependencies": {
     "browser-reset": "^1.0.4"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/nothingrandom/barebonesio/issues"
+  },
+  "license": "GPL-2.0"
 }
