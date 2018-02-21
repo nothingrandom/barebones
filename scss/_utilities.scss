@@ -259,7 +259,6 @@
 
 // Screen sizes
 // ==============================
-
 @mixin screen-min($min-width) {
   @media screen
   and (min-width: $min-width) {
