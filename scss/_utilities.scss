@@ -115,6 +115,34 @@
   }
 }
 
+// header-style
+// @param @content: Add styles for header texts
+@mixin header-style {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  th,
+  .font--header {
+    @content;
+  }
+}
+
+// paragraph-style
+// @param @content: Add styles for paragraph texts
+@mixin paragraph-style {
+  p,
+  a,
+  li,
+  td,
+  p span,
+  .font--paragraph {
+    @content;
+  }
+}
+
 // Layout
 // ==============================
 
