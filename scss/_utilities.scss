@@ -124,8 +124,7 @@
   h4,
   h5,
   h6,
-  th,
-  .font--header {
+  th {
     @content;
   }
 }
@@ -137,8 +136,7 @@
   a,
   li,
   td,
-  p span,
-  .font--paragraph {
+  p span {
     @content;
   }
 }
@@ -197,7 +195,7 @@
 // pseudo
 // for use with ::before / ::after elements, as you always use these
 // @param $pos: Accepted values: [ABSOLUTE | relative | static | sticky | fixed]
-@mixin pseudo($pos: absolute, $display: block, $content: '') {
+@mixin pseudo($content: '', $pos: absolute, $display: block) {
   position: $pos;
   display: $display;
   content: $content;
@@ -317,6 +315,11 @@
     }
     @else if $min == 'lg' {
       @include screen-min($screen-lg) {
+        @content;
+      }
+    }
+    @else if $min == 'xlg' {
+      @include screen-min($screen-xlg) {
         @content;
       }
     }
