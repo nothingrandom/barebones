@@ -1,11 +1,10 @@
-# [barebonesio](http://barebones.io)
-
-> barebonesio is the starting point for stylesheets.
+# barebones
+> barebones is the starting point for stylesheets.
 
 ## Installation
-Using this project is fairly straight forward. For beginners, I'd recommend that you use this project with the gulp starter project [blendid](https://github.com/vigetlabs/blendid).
+Using this project is fairly straight forward.
 
-Just drop the contents of the `scss` folder into blendid's `stylesheet` folder (or your own scss folder) and run either `yarn add browser-reset` or `npm install -save browser-reset` to also add my [browser-reset](https://github.com/nothingrandom/browser-reset) project
+Just drop the contents of the `scss` folder into your `stylesheet` folder and run either `yarn add browser-reset` or `npm install -save browser-reset` to also add my [browser-reset](https://github.com/nothingrandom/browser-reset) project
 
 ### What this is
 This project is a great starting point for writing clean, functional stylesheets using scss.
@@ -55,7 +54,7 @@ Modern web means supporting screen sizes of all sorts. I like to build mobile fi
 You can find the variables for these in the `scss/_variables` file
 
 #### The rest
-I've done a fair job of writing a lot of comments in the `scss/_utilities` file, so a quick read through will give a good overview of everything included
+I've done a fairly job of writing a lot of comments in the `scss/_utilities` file, so a quick read through will give a good overview of everything included
 
 
 ### Wishlist (and issues)

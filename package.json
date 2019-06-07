@@ -1,7 +1,6 @@
 {
-  "name": "barebonesio",
+  "name": "barebones",
   "description": "The starting point for stylesheets",
-  "homepage": "http://barebones.io",
   "keywords": [
     "scss",
     "css",
@@ -12,7 +11,7 @@
   "contributors": [],
   "repository": {
     "type": "git",
-    "url": "git://github.com/nothingrandom/barebonesio.git"
+    "url": "git://github.com/nothingrandom/barebones.git"
   },
   "main": "style.scss",
   "version": "2.0.2",
@@ -20,7 +19,7 @@
     "browser-reset": "^1.0.4"
   },
   "bugs": {
-    "url": "https://github.com/nothingrandom/barebonesio/issues"
+    "url": "https://github.com/nothingrandom/barebones/issues"
   },
   "license": "GPL-2.0"
 }
