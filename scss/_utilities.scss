@@ -152,6 +152,7 @@
   text-overflow: ellipsis;
   -webkit-line-clamp: $lines;
   -webkit-box-orient: vertical;
+  word-break: break-word;
 }
 
 // Layout
