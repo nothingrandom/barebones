@@ -110,15 +110,11 @@
 // selection
 // @param @content: Add styles for highlighted text
 @mixin selection {
-  ::-moz-selection {
+  &::-moz-selection {
     @content;
   }
 
-  ::-webkit-selection {
-    @content;
-  }
-
-  ::selection {
+  &::selection {
     @content;
   }
 }
