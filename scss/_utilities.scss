@@ -73,6 +73,7 @@
     font-family: $font-family;
     font-weight: $weight;
     font-style: $style;
+    font-display: swap;
 
     src: url('#{$file-path}.eot'); /* IE9 Compat Modes */
     src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
