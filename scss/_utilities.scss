@@ -365,6 +365,17 @@
   @return rgba($hexcolor, $opacity);
 }
 
+@mixin light-dark($property, $lightcolor, $darkcolor) {
+  #{$property}: $lightcolor;
+
+  @media (prefers-color-scheme: dark) {
+    #{$property}: $darkcolor;
+  }
+  @media (prefers-color-scheme: light) {
+    #{$property}: $lightcolor;
+  }
+}
+
 // Other
 // ==============================
 
