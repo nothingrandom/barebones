@@ -362,6 +362,10 @@
   @return rgba($hexcolor, $opacity);
 }
 
+// light-dark
+// @param $property: The CSS property to give different values to if browser pref. is light / dark
+// @param $lightcolor: Value (color) to have if browser is light (fallback)
+// @param $darkcolor: Value (color) to have if browser is dark
 @mixin light-dark($property, $lightcolor, $darkcolor) {
   #{$property}: $lightcolor;
 
