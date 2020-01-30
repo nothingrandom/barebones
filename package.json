@@ -1,25 +1,28 @@
 {
   "name": "barebones",
+  "version": "2.1.0",
   "description": "The starting point for stylesheets",
-  "keywords": [
-    "scss",
-    "css",
-    "design",
-    "web"
-  ],
-  "author": "Benjamin Hollway <benjamin@nothingrandom.com>",
-  "contributors": [],
+  "main": "style.scss",
   "repository": {
     "type": "git",
     "url": "git://github.com/nothingrandom/barebones.git"
   },
-  "main": "style.scss",
-  "version": "2.0.2",
-  "dependencies": {
-    "browser-reset": "^1.0.4"
-  },
+  "keywords": [
+    "css",
+    "scss",
+    "stylesheets",
+    "browser",
+    "utilities",
+    "utility",
+    "scss-mixins"
+  ],
+  "author": "Benjamin Hollway <benjamin@nothingrandom.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nothingrandom/barebones/issues"
   },
-  "license": "GPL-2.0"
+  "homepage": "https://github.com/nothingrandom/barebones#readme",
+  "dependencies": {
+    "browser-reset": "^1.0.4"
+  }
 }
