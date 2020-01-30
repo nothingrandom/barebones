@@ -1,14 +1,8 @@
 // Import barebones scss structure
 @import 'browser-reset/reset.scss';
-@import 'utilities', 'variables', 'colors', 'fonts';
-
-// Grid
-@import 'grid';
+@import 'utilities', 'variables', 'grid';
 
 html {
   @include font-smoothing(on);
   font-size: $base-font-size;
 }
-
-// YOUR STYLES HERE
-// ==============================

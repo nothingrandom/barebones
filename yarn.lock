@@ -2,6 +2,7 @@
 # yarn lockfile v1
 
 
-browser-reset@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/browser-reset/-/browser-reset-1.0.1.tgz#a6cd1d312f2d0b41eb1c9f74df27169d2a874b9d"
+browser-reset@^1.0.4:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/browser-reset/-/browser-reset-1.0.7.tgz#7c6d06ca330ddd330ecccfca8e56fd582cabc752"
+  integrity sha512-X/b+YGQjw1krWFydzYKoN3iKa/lnaYc7dvc0uerX0jH3ZrLRTa3fEDWRJxhDijknNrad2FimvmSXVrI5J2mfGQ==
