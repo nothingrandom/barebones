@@ -180,6 +180,17 @@
   }
 }
 
+// force an emlement within a `.container` div to be full width
+@mixin force-full-width() {
+  position: relative;
+  width: calc(100vw);
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow-x: hidden;
+}
+
 /// Create multiple columns from a group of items
 /// @parameter {Number} $column-count
 /// @parameter {Number} $column-gap
