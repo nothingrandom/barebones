@@ -1,8 +1,8 @@
 {
   "name": "barebones",
   "version": "2.1.0",
-  "description": "The starting point for stylesheets",
-  "main": "style.scss",
+  "description": "scss based starter for stylesheets, with utilities",
+  "main": "toolkit/minimal.scss",
   "repository": {
     "type": "git",
     "url": "git://github.com/nothingrandom/barebones.git"
