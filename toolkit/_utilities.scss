@@ -73,6 +73,7 @@
 /// @parameter {Path} $file-path: Path to font (filename without extension)
 /// @parameter {Number} $weight: Weight of font (default: normal)
 /// @parameter {String} $style: Style of font (default: normal)
+/// @example @include font-face('Font Name', '/path/to/font', 400, normal);
 /// @see https://github.com/thoughtbot/bourbon/blob/3dca2ecccaaa3db9cea8d74c8221fbde7e6284d8/app/assets/stylesheets/css3/_font-face.scss
 
 @mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
@@ -167,6 +168,15 @@
 /// Layout
 /// ==============================
 
+/// sets an element size, especially useful for creating squares and circles
+/// @parameter {Number} $width: the value used for both width and height if height is not set
+/// @parameter {Number} $height
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
 /// clearfix
 @mixin clearfix {
   &::before,
@@ -229,7 +239,7 @@
   }
 }
 
-/// pseudo
+/// setup pseudo elements with the values they need to exist
 /// for use with ::before / ::after elements, as you always use these
 /// @parameter {String} $content:
 /// @parameter {Value} $pos: Accepted values: [ABSOLUTE | relative | static | sticky | fixed]
@@ -287,8 +297,9 @@
 
 /// Generate vendor prefixes
 /// @parameter {String} $property
-/// @argument {Value} $value
-/// @argument {String()} $prefixes
+/// @parameter {Value} $value
+/// @parameter {String()} $prefixes
+/// @example @include value-prefixer(cursor, grab, ("webkit", "moz"));
 
 @mixin prefixer($property, $value, $prefixes: ()) {
   @each $prefix in $prefixes {
