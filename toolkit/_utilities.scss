@@ -547,12 +547,23 @@
 }
 
 /// simple ease in out transition with one line
-/// @parameter {Value} $property: what css property to transition
-/// @parameter {Value} $timing: what transition effect to use
+/// @parameter {String()} $properties: what css property to transition
 /// @parameter {Number} $duration: how long the transition will last (see _variables)
+/// @parameter {Value} $timing: what transition effect to use
 /// @parameter {Number} $delay: how long to delay the transition for
 /// @return transition: all ease-in-out .15s 0s;
 
-@mixin transition($property: all, $timing: ease-in-out, $duration: $transition-time, $delay: 0s) {
-  transition: $property $timing $duration $delay;
+@mixin transition($properties: ('all'), $duration: $transition-time, $timing: ease-in-out, $delay: 0s) {
+  $value: ();
+  @each $property in $properties {
+    @if length($value) > 0 {
+      $value: append($value, unquote(",") #{$property} $transition-time $timing $delay);
+    }
+
+    @else {
+      $value: append($value, #{$property} $transition-time $timing $delay);
+    }
+  }
+
+  transition: $value;
 }
