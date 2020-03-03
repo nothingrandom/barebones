@@ -401,6 +401,11 @@
         @content;
       }
     }
+    @else if $min == 'print' {
+      @media print {
+        @content;
+      }
+    }
   }
 
   @else if $type == number {
