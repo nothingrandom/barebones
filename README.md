@@ -66,4 +66,4 @@ I recommend that you use this [scss-lint](https://github.com/nothingrandom/scss-
 
 ----------
 
-##### _Made by [Benjamin Hollway](http://nothingrandom.com) :)_
+##### _Made by [Benjamin Grant](http://nothingrandom.com) :)_
